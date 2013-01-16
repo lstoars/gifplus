@@ -1,0 +1,149 @@
+#sgnav {
+	margin: 10px 0px 20px;
+	width: 100%;
+	display: block;
+	float: left;
+	clear: both
+}
+
+#sgnav ul {
+	padding-bottom: 0px;
+	list-style-type: none;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	float: left;
+	padding-top: 0px
+}
+
+#sgnav li {
+	list-style-type: none;
+	float: left
+}
+
+#sgnav li {
+	margin: 0px
+}
+
+#sgnav a {
+	background-image: url(sgnav.png);
+	width: 120px;
+	display: block;
+	background-repeat: no-repeat;
+	height: 40px;
+	color: #000;
+	cursor: hand;
+	text-decoration: none
+}
+
+#shuabao a:link {
+	background-position: 0px 0px
+}
+
+#shuabao a:visited {
+	background-position: 0px 0px
+}
+
+#duanzi a:link {
+	background-position: -120px 0px
+}
+
+#duanzi a:visited {
+	background-position: -120px 0px
+}
+
+#renpin a:link {
+	background-position: -240px 0px
+}
+
+#renpin a:visited {
+	background-position: -240px 0px
+}
+
+#jiongma a:link {
+	background-position: -360px 0px
+}
+
+#jiongma a:visited {
+	background-position: -360px 0px
+}
+
+#youxi a:link {
+	background-position: -480px 0px
+}
+
+#youxi a:visited {
+	background-position: -480px 0px
+}
+
+#gifs a:link {
+	background-position: -600px 0px
+}
+
+#gifs a:visited {
+	background-position: -600px 0px
+}
+
+#manhua a:link {
+	background-position: -720px 0px
+}
+
+#manhua a:visited {
+	background-position: -720px 0px
+}
+
+#shuabao a:hover {
+	background-position: 0px -40px
+}
+
+#shuabao a:active {
+	background-position: 0px -40px
+}
+
+#duanzi a:hover {
+	background-position: -120px -40px
+}
+
+#duanzi a:active {
+	background-position: -120px -40px
+}
+
+#renpin a:hover {
+	background-position: -240px -40px
+}
+
+#renpin a:active {
+	background-position: -240px -40px
+}
+
+#jiongma a:hover {
+	background-position: -360px -40px
+}
+
+#jiongma a:active {
+	background-position: -360px -40px
+}
+
+#youxi a:hover {
+	background-position: -480px -40px
+}
+
+#youxi a:active {
+	background-position: -480px -40px
+}
+
+#gifs a:hover {
+	background-position: -600px -40px
+}
+
+#gifs a:active {
+	background-position: -600px -40px
+}
+
+#manhua a:hover {
+	background-position: -720px -40px
+}
+
+#manhua a:active {
+	background-position: -720px -40px
+}

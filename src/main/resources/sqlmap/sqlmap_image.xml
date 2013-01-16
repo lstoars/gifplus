@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="gbk"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ImageDAO">
+
+	<resultMap type="com.lstoars.gifplus.domian.ImageDO" id="ImageDO">
+		<result column="id" property="id" />
+		<result column="image_url" property="imageUrl" />
+		<result column="image_desc" property="imageDesc" />
+		<result column="tag_id" property="tagId" />
+		<result column="share_count" property="shareCount" />
+		<result column="gmt_modified" property="gmtModified" />
+		<result column="gmt_create" property="gmtCreate" />
+	</resultMap>
+	
+	<select id="ImageDAO.queryImageList" resultMap="ImageDO" >
+		select * from t_image
+			where 1=1
+		<if test="tagId != 0">
+			and tag_id=#{tagId}
+		</if>
+		order by ${columnName} desc
+		limit #{startRow},#{pageSize}
+	</select>
+	
+	<select id="ImageDAO.queryImageById" resultMap="ImageDO">
+		select 
+			* from t_image
+		where
+		id=#{id}
+	</select>
+	
+	<select id="ImageDAO.queryImageCount" resultType="java.lang.Integer">
+		select count(*) from t_image
+			where 1=1
+		<if test="tagId != 0">
+			and tag_id=#{tagId}
+		</if>
+	</select>
+	
+	<insert id="ImageDAO.save" parameterType="image">
+		insert into t_image
+			(image_url,image_desc,tag_id,gmt_modified,gmt_create)
+		values (#{imageUrl},#{imageDesc},#{tagId},now(),now())
+		<selectKey resultType="long" keyProperty="id">
+			select
+			last_insert_id() as ID
+		</selectKey>
+	</insert>
+	
+	<update id="ImageDAO.incrShareCount">
+		update 
+			t_image 
+		set 
+			share_count=share_count+1,
+			gmt_modified = now()
+		where 
+			id=#{id}
+	</update>
+</mapper>

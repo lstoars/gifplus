@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="gbk"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.lstoars.gifplus.domian.ImageDO" alias="image"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="sqlmap/sqlmap_image.xml"/>
+		<mapper resource="sqlmap/sqlmap_tag.xml"/>
+		<mapper resource="sqlmap/sqlmap_user.xml"/>
+	</mappers>
+</configuration>

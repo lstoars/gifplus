@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="gbk"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserDAO">
+
+	<resultMap type="com.lstoars.gifplus.domian.UserDO" id="UserDO">
+		<result column="id" property="id" />
+		<result column="pushId" property="pushId" />
+		<result column="gender" property="gender" />
+		<result column="nick" property="nick" />
+		<result column="outh" property="outh" />
+		<result column="gmt_create" property="gmtCreate" />
+	</resultMap>
+
+	<insert id="UserDAO.save">
+		insert into
+		t_user(pushId,gender,nick,outh,gmt_create)
+		values(#{pushId},#{gender},#{nick},#{outh},now())
+	</insert>
+
+	<select id="UserDAO.queryById" resultMap="UserDO">
+		select * from t_user
+		where pushId=#{uId}
+	</select>
+
+	<select id="UserDAO.queryUserPaged" resultMap="UserDO">
+		select * from
+		t_user
+		limit #{startRow},#{pageSize}
+	</select>
+
+	<select id="UserDAO.queryCountUser" resultType="java.lang.Integer">
+		select count(*)
+		from t_user
+	</select>
+</mapper>

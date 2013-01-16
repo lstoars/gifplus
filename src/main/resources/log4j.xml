@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GB18030"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/home/sahala/apache-tomcat-6.0.35/logs/gifplus.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d - %c -%-4r [%t] %-5p %x - %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="org.springframework" additivity="false">
+        <level value="INFO"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+	
+	<!-- 根logger的设置 -->
+	<root>
+		<priority value="WARN" />
+		<appender-ref ref="FILE" />
+		<level value="WARN" />
+	</root>
+</log4j:configuration>
